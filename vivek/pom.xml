@@ -13,7 +13,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <sonar.coverage.jacoco.xmlReportPaths>D:\DEVOPS PRACTISE\jkhome\.jenkins\workspace\demo07052025\vivek/target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+    <sonar.coverage.jacoco.xmlReportPaths>D:/DEVOPS PRACTISE/jkhome/.jenkins/workspace/demo07052025/vivek/target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
     <maven.compiler.release>8</maven.compiler.release>
   </properties>
 
