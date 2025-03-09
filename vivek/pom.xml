@@ -85,44 +85,48 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.6.1</version>
         </plugin>
-<plugin>
-    <groupId>org.jacoco</groupId>
-    <artifactId>jacoco-maven-plugin</artifactId>
-    <version>0.8.11</version>
-    <executions>
-        <execution>
-            <id>prepare-agent</id>
-            <goals>
-                <goal>prepare-agent</goal>
-            </goals>
-        </execution>
-        <execution>
-            <id>report</id>
-            <phase>verify</phase>
-            <goals>
-                <goal>report</goal>
-            </goals>
-        </execution>
-        <execution>
-            <id>report-aggregate</id>
-            <phase>verify</phase>
-            <goals>
-                <goal>report-aggregate</goal>
-            </goals>
-        </execution>
-      </executions>
-      <configuration>
-        <reports>
-            <report>xml</report>  <!-- Ensure XML report is generated -->
-        </reports>
-      </configuration>
-    </plugin>
+        <plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <version>0.8.11</version>
+              <executions>
+                  <execution>
+                      <id>prepare-agent</id>
+                      <goals>
+                          <goal>prepare-agent</goal>
+                      </goals>
+                  </execution>
+                  <execution>
+                      <id>report</id>
+                      <phase>verify</phase> 
+                      <goals>
+                          <goal>report</goal>
+                      </goals>
+                  </execution>
+                  <execution>
+                      <id>report-aggregate</id>
+                      <phase>verify</phase>
+                      <goals>
+                          <goal>report-aggregate</goal>
+                      </goals>
+                  </execution>
+              </executions>
+              <configuration>
+                  <dataFile>${project.build.directory}/jacoco.exec</dataFile>
+                  <reportsDirectory>${project.build.directory}/site/jacoco</reportsDirectory>
+                  <outputDirectory>${project.build.directory}/site/jacoco</outputDirectory>
+                  <reportFormats>
+                      <reportFormat>XML</reportFormat> <!-- Explicitly define XML format -->
+                  </reportFormats>
+              </configuration>
+        </plugin>
 
-    <plugin>
-      <groupId>org.sonarsource.scanner.maven</groupId>
-      <artifactId>sonar-maven-plugin</artifactId>
-      <version>4.0.0.4121</version>
-</plugin>
+
+        <plugin>
+          <groupId>org.sonarsource.scanner.maven</groupId>
+          <artifactId>sonar-maven-plugin</artifactId>
+          <version>4.0.0.4121</version>
+        </plugin>
         
       </plugins>
     </pluginManagement>
