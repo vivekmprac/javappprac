@@ -85,25 +85,39 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.6.1</version>
         </plugin>
-        <plugin>
-          <groupId>org.jacoco</groupId>
-          <artifactId>jacoco-maven-plugin</artifactId>
-          <version>0.8.11</version>
-          <executions>
-            <execution>
-              <goals>
+<plugin>
+    <groupId>org.jacoco</groupId>
+    <artifactId>jacoco-maven-plugin</artifactId>
+    <version>0.8.11</version>
+    <executions>
+        <execution>
+            <id>prepare-agent</id>
+            <goals>
                 <goal>prepare-agent</goal>
-              </goals>
-            </execution>
-          <execution>
+            </goals>
+        </execution>
+        <execution>
             <id>report</id>
-            <phase>verify</phase>  <!-- Changed from test to verify -->
-              <goals>
+            <phase>verify</phase>
+            <goals>
                 <goal>report</goal>
-              </goals>
-          </execution>
+            </goals>
+        </execution>
+        <execution>
+            <id>report-aggregate</id>
+            <phase>verify</phase>
+            <goals>
+                <goal>report-aggregate</goal>
+            </goals>
+        </execution>
       </executions>
+      <configuration>
+        <reports>
+            <report>xml</report>  <!-- Ensure XML report is generated -->
+        </reports>
+      </configuration>
     </plugin>
+
     <plugin>
       <groupId>org.sonarsource.scanner.maven</groupId>
       <artifactId>sonar-maven-plugin</artifactId>
