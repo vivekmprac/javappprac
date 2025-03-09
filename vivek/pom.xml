@@ -13,7 +13,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <sonar.coverage.jacoco.xmlReportPaths>D:/DEVOPS PRACTISE/jkhome/.jenkins/workspace/demo07052025/vivek/target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+    <sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
     <maven.compiler.release>8</maven.compiler.release>
   </properties>
 
@@ -112,9 +112,9 @@
                   </execution>
               </executions>
               <configuration>
-                  <dataFile>D:/DEVOPS PRACTISE/jkhome/.jenkins/workspace/demo07052025/vivek/target/jacoco.exec</dataFile>
-                  <reportsDirectory>D:/DEVOPS PRACTISE/jkhome/.jenkins/workspace/demo07052025/vivek/target/site/jacoco</reportsDirectory>
-                  <outputDirectory>D:/DEVOPS PRACTISE/jkhome/.jenkins/workspace/demo07052025/vivek/target/site/jacoco</outputDirectory>
+                <dataFile>${project.build.directory}/jacoco.exec</dataFile>
+                <reportsDirectory>${project.build.directory}/site/jacoco</reportsDirectory>
+                <outputDirectory>${project.build.directory}/site/jacoco</outputDirectory>
                   <reportFormats>
                       <reportFormat>XML</reportFormat> <!-- Explicitly define XML format -->
                   </reportFormats>
